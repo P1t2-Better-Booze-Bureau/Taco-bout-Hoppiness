@@ -2,7 +2,7 @@ var tableBody = document.getElementById("breweryTable");
 var tacoTable = document.getElementById("tacoTable")
 var buttonClick = document.getElementById("submitButton");
 // Documenu Geo API
-var documenuApi = "https://api.documenu.com/v2/restaurants/search/geo?key=442e928049c9bb7b553d48b27474017a&cuisine=Mexican&distance=2&"
+var documenuApi = "https://api.documenu.com/v2/restaurants/search/geo?key=442e928049c9bb7b553d48b27474017a&cuisine=Mexican&distance=2&fullmenu&"
 var zipCodeVariable = "";
 // Test Variables
 var lat = 41.92;
