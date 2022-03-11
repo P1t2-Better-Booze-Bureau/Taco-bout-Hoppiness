@@ -4,7 +4,8 @@ var buttonClick = document.getElementById("submitButton");
 // Documenu Geo API / Needs fresh key for demonstration
 var documenuApi =
   "https://api.documenu.com/v2/restaurants/search/geo?key=1d72ed71331751f36558c92ff7f8a0cf&cuisine=Mexican&distance=2&fullmenu";
-  // additional key: 442e928049c9bb7b553d48b27474017a
+  // additional key: 442e928049c9bb7b553d48b27474017a - Miguel
+  // KEY FOR DEMO: bb8246f243790c635ad142fe7f2030ba
 var zipCodeVariable = "";
 // Test Variables
 var coordinate = [ ];
