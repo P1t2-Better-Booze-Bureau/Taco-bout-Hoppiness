@@ -128,12 +128,20 @@ function getTaco(coordinate) {
     .then(function (tacoData) {
       console.log(tacoData);
       for (var i = 0; i < tacoData.data.length; i++) {
-        let template = `
-        <tr>
-        <td class="w-1/2 py-2 border-2 border-teal-200 bg-slate-100">${tacoData.data[i].restaurant_name}</td>
-        <td class="w-1/4 py-2 border-2 border-teal-200 bg-slate-100">${tacoData.data[i].address.state}</td>
-        <tr>
-        `;
+        let template = `<div class="rounded overflow-hidden shadow-lg flex flex-shrink-0 w-1/4 content-between hover:scale-105 bg-purple-200 hover: bg-purple-300">
+      <div class="py-2.5 px-2.5">
+      <div class="font-bold text-xl mb-2">${data[i].name}</div>
+      <p class="text-gray-700 text-base"> Address: 
+      ${data[i].street} <br>
+      <span class="pl-16">${data[i].city},
+      ${data[i].state}</span><br>
+          <span class="pl-16"> ${data[i].postal_code}</span>
+          </p>
+          <br>
+          <a href=${data[i].website_url} target="_blank" class="blue-300 underline hover:decoration-2">Website</a><br><br>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-8 border-2 border-black">${data[i].brewery_type}</span>
+          </div>
+          </div>            `;
         tacoTable.innerHTML += template;
       }
     });
