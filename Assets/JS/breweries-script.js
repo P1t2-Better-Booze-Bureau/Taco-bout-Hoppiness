@@ -37,6 +37,7 @@ function findHoppiness(coordinate) {
   
   
   .then(function (data) {
+    console.log(data);
     // console.log(data);
     for (var i = 0; i < data.length; i++) {
       breweryCard = {
@@ -46,6 +47,8 @@ function findHoppiness(coordinate) {
         State: data[i].state,
         PostalCode: data[i].postal_code,
         WebsiteURL: data[i].website_url,
+        Lat: data[i].latitude,
+        Lon: data[i].longitude,
       }
       
       console.log(breweryCard);
@@ -58,7 +61,7 @@ function findHoppiness(coordinate) {
       
       
       
-      let template = `<div class="rounded overflow-hidden shadow-lg flex flex-shrink-0 w-1/4 content-between hover:scale-105">
+      let template = `<div class="rounded overflow-hidden shadow-lg flex flex-shrink-0 w-1/4 content-between hover:scale-105 bg-purple-200 hover: bg-purple-300">
       <div class="py-2.5 px-2.5">
       <div class="font-bold text-xl mb-2">${data[i].name}</div>
       <p class="text-gray-700 text-base"> Address: 
