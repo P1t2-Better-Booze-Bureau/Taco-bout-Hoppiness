@@ -5,7 +5,8 @@ var buttonClick = document.getElementById("submitButton");
 
 // Used Miguel's key for testing brewery layout to reduce unnecessary pulls
 // var documenuApi = "https://api.documenu.com/v2/restaurants/search/geo?key=442e928049c9bb7b553d48b27474017a&cuisine=Mexican&distance=2&fullmenu";
-var documenuApi = "https://api.documenu.com/v2/restaurants/search/geo?key=1d72ed71331751f36558c92ff7f8a0cf&cuisine=Mexican&distance=2&fullmenu";
+// var documenuApi = "https://api.documenu.com/v2/restaurants/search/geo?key=1d72ed71331751f36558c92ff7f8a0cf&cuisine=Mexican&distance=2&fullmenu";
+var documenuApi = "https://api.documenu.com/v2/restaurants/search/geo?key=e59184fab7b4752cf7593f7ca4a627f1&cuisine=Mexican&distance=2&fullmenu";
 // additional key: 442e928049c9bb7b553d48b27474017a - Miguel
 // KEY FOR DEMO: bb8246f243790c635ad142fe7f2030ba
 var zipCodeVariable = "";
@@ -31,8 +32,8 @@ function findHoppiness(coordinate) {
     .then(function (data) {
       for (var i = 0; i < data.length; i++) {
 
-        let template = `<div class="rounded overflow-hidden shadow-lg flex flex-shrink-0 w-1/4 content-between hover:scale-105 bg-indigo-300 hover:bg-indigo-400">
-      <div class="py-2.5 px-2.5 bg-[url('./Assets/pictures/BeerSuds.jpg')] brewCard">
+        let template = `<div class="rounded overflow-hidden shadow-lg flex flex-shrink-0 w-1/4 content-between hover:scale-105 bg-indigo-300 hover:bg-indigo-400  bg-[url('./Assets/pictures/BeerSuds.jpg')]">
+      <div class="py-2.5 px-2.5 brewCard">
       <div class="font-bold text-xl mb-2">${data[i].name}</div>
       <p class="text-gray-700 text-base"> Address: 
       ${data[i].street} <br>
