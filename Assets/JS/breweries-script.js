@@ -35,7 +35,6 @@ function findHoppiness(coordinate) {
     })
     // loop to add data to table
 
-
     .then(function (data) {
       console.log(data);
       // console.log(data);
@@ -78,7 +77,6 @@ function findHoppiness(coordinate) {
         tableBody.innerHTML += template;
       }
     });
-
 }
 
 // Starting on submit function when the enter key is hit while in the Zip Code area
@@ -146,3 +144,4 @@ function getTaco(coordinate) {
       }
     });
 }
+
