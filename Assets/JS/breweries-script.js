@@ -81,7 +81,7 @@ function findHoppiness(coordinate) {
 // Function to pull geolocation from user zip code
 function geocode() {
   zipCodeVariable = document.getElementById("zipCode").value;
-  var openWeatherApi = `http://api.openweathermap.org/geo/1.0/zip?appid=d20682e8d5e2100a9c4e1e2f42e32a85&zip=${zipCodeVariable},US`;
+  var openWeatherApi = `https://api.openweathermap.org/geo/1.0/zip?appid=d20682e8d5e2100a9c4e1e2f42e32a85&zip=${zipCodeVariable},US`;
   fetch(openWeatherApi)
     .then(function (response) {
       return response.json();
