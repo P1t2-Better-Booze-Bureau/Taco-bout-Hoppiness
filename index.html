@@ -7,37 +7,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
   <title>Taco 'bout Hoppiness</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Rye&family=Train+One&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <nav class="flex items-center justify-around flex-wrap bg-white-500 p-6">
     <div class="flex items-center flex-shrink-0 text-white mr-6">
-      <span><img src="./Assets/pictures/Logo.png" class="flex flex-shrink-0 w-full"></span>
+      <span><img src="./Assets/pictures/tacobouthoppiness2.jpg" class=""></span>
     </div>
     <div class="block lg:hidden">
     </div>
     <form class="w-full max-w-sm">
-      <div class="flex items-center py-10">
+      <div class="flex items-center border-b border-purple-500 py-10">
         <!-- Figure out zip code validation -->
         <input
           class="appearance-none bg-gray-100 border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
           type="text" placeholder="Zip Code" pattern="[0-9]*" maxlength="5" aria-label="Zip Code" id="zipCode">
         <button
-          class="flex flex-shrink-0 font-bold bg-red-300 hover:bg-red-500 border-red-500 hover:border-red-300 text-sm border-4 text-black py-1 px-2 rounded"
+          class="flex-shrink-0 bg-red-300 hover:bg-red-500 border-red-500 hover:border-red-300 text-sm border-4 text-black py-1 px-2 rounded"
           type="button" id="submitButton">
           🔎 Find Hoppiness
+        </button>
       </div>
     </form>
     </div>
   </nav>
   <br>
-  <h1 class="font-bold italic text-2xl mb-2 text-center text-violet-900 border-b border-purple-500 pb-12 w-100 font-['Bungee_Inline']"> Are you ready to discover hoppiness?</h1>
+  <br>
   <br>
   <!-- Brewery Cards -->
-  <h1 class="p-10 content-center text-center font-['Bungee_Inline']">PICK YOUR BREWERY</h1>
+  <h1 class="p-10 content-center text-center">Pick your brewery</h1>
   <section class="container mx-auto">
     <div class="p-10 grid w-100">
       <!-- <img class="w-full" src="./Assets/pictures/tacobouthoppiness2.jpg" alt="Hoppiness"> -->
@@ -46,15 +44,18 @@
       </div>
     </div>
   </section>
-  <!-- Taco Table -->
-  <h1 class="p-10 content-center text-center font-['Bungee_Inline']">Pick your taqueria</h1>
-  <section class="container mx-auto">
-    <div class="p-10 grid w-100">
-      <!-- <img class="w-full" src="./Assets/pictures/tacobouthoppiness2.jpg" alt="Hoppiness"> -->
-      <!-- overflow x auto for scroll bar -->
-      <div id="tacoTable" class="rounded overflow-x-auto shadow-lg flex gap-5">
-      </div>
-    </div>
+  <!-- Taquerias Table -->
+  <section class="container items-center justify-left w-1/2">
+    <h1 class="text-center text">Taquerias</h1>
+    <table class="table-fixed container border-separate bordered-2 border-slate-400">
+      <thead class="bg-slate-300">
+        <tr>
+          <th id="tacoName" class="w-1/2 py-2 border-4 border-teal-400">Restaurant Name</th>
+          <th id="tacoAddress" class="w-1/4 py-2 border-4 border-teal-400">Address</th>
+        </tr>
+      </thead>
+      <tbody id="tacoTable" class="text-center"></tbody>
+    </table>
   </section>
   <script src="./Assets/JS/script.js"></script>
   <script src="./Assets/JS/breweries-script.js"></script>

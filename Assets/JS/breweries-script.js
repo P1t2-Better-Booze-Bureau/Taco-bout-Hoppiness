@@ -1,17 +1,22 @@
-var breweryTable = document.getElementById("breweryTable");
+var breweryCardArray = {};
+var breweryCard;
+var tableBody = document.getElementById("breweryTable");
 var tacoTable = document.getElementById("tacoTable");
 var buttonClick = document.getElementById("submitButton");
 // Documenu Geo API / Needs fresh key for demonstration
 
 // Used Miguel's key for testing brewery layout to reduce unnecessary pulls
-// var documenuApi = "https://api.documenu.com/v2/restaurants/search/geo?key=442e928049c9bb7b553d48b27474017a&cuisine=Mexican&distance=2&fullmenu";
-var documenuApi = "https://api.documenu.com/v2/restaurants/search/geo?key=1d72ed71331751f36558c92ff7f8a0cf&cuisine=Mexican&distance=2&fullmenu";
+var documenuApi = "https://api.documenu.com/v2/restaurants/search/geo?key=442e928049c9bb7b553d48b27474017a&cuisine=Mexican&distance=2&fullmenu";
+// "https://api.documenu.com/v2/restaurants/search/geo?key=1d72ed71331751f36558c92ff7f8a0cf&cuisine=Mexican&distance=2&fullmenu";
 // additional key: 442e928049c9bb7b553d48b27474017a - Miguel
 // KEY FOR DEMO: bb8246f243790c635ad142fe7f2030ba
 var zipCodeVariable = "";
+// Test Variables
 var coordinate = [];
 // Get hoppiness button event listener
 buttonClick.addEventListener("click", geocode);
+
+// Brewery card selected event listener
 
 // Function to pull brewery information based on geolocation
 function findHoppiness(coordinate) {
@@ -19,8 +24,10 @@ function findHoppiness(coordinate) {
 
   openBreweryDBUrl += `${coordinate[0]},${coordinate[1]}`;
 
+  console.log(openBreweryDBUrl);
+
   // Clear cards when completing an additional search
-  breweryTable.innerHTML = "";
+  tableBody.innerHTML = "";
   fetch(openBreweryDBUrl)
 
     .then(function (response) {
@@ -29,35 +36,45 @@ function findHoppiness(coordinate) {
     // loop to add data to table
 
     .then(function (data) {
+      console.log(data);
+      // console.log(data);
       for (var i = 0; i < data.length; i++) {
+        breweryCard = {
+          Name: data[i].name,
+          Street: data[i].street,
+          City: data[i].city,
+          State: data[i].state,
+          PostalCode: data[i].postal_code,
+          WebsiteURL: data[i].website_url,
+          Lat: data[i].latitude,
+          Lon: data[i].longitude,
+        }
 
-        let template = `<div class="rounded overflow-hidden shadow-lg flex flex-shrink-0 w-1/4 content-between hover:scale-105 bg-indigo-300 hover:bg-indigo-400">
-      <div class="py-2.5 px-2.5 bg-[url('./Assets/pictures/BeerSuds.jpg')] brewCard">
+        console.log(breweryCard);
+
+        // beginning to adding to the DOM via create element. If a URL returns as null via the API we can not post a link.
+        // const breweryCardNode1 = document.createElement('div class="rounded overflow-hidden shadow-lg flex flex-shrink-0 w-1/4 content-between hover:scale-105"');
+        // breweryCardNode1.setAttribute()
+        // const breweryCardNode2 = document.createElement('div class="py-2.5 px-2.5"');
+        // const breweryCardNode3 = document.createElement('div class="font-bold text-xl mb-2" id="breweryName');
+
+
+
+        let template = `<div class="rounded overflow-hidden shadow-lg flex flex-shrink-0 w-1/4 content-between hover:scale-105 bg-purple-200 hover: bg-purple-300">
+      <div class="py-2.5 px-2.5">
       <div class="font-bold text-xl mb-2">${data[i].name}</div>
       <p class="text-gray-700 text-base"> Address: 
       ${data[i].street} <br>
       <span class="pl-16">${data[i].city},
       ${data[i].state}</span><br>
-      <span class="pl-16"> ${data[i].postal_code}</span>
+          <span class="pl-16"> ${data[i].postal_code}</span>
           </p>
-          <br>`
-        if (data[i].website_url != null) {
-          template += websiteAdd(data[i].website_url);
-        }
-
-        template += `<br>
-        <div class="invisible" id="brewLat">${data[i].latitude}</div>
-        <div class="invisible" id="brewLon">${data[i].longitude}</div>
+          <br>
+          <a href=${data[i].website_url} target="_blank" class="blue-300 underline hover:decoration-2">Website</a><br><br>
           <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-8 border-2 border-black">${data[i].brewery_type}</span>
           </div>
           </div>            `;
-        breweryTable.innerHTML += template;
-      }
-      // Brewery card event listener to search for tacos
-      var cardEl = document.getElementsByClassName(`brewCard`);
-      console.log(cardEl);
-      for (let i = 0; i < cardEl.length; i++) {
-        cardEl[i].addEventListener(`click`, getTaco);   
+        tableBody.innerHTML += template;
       }
     });
 }
@@ -88,17 +105,18 @@ function geocode() {
     })
 
     .then(function (data) {
+      // console.log(data, data.lat, data.lon);
       coordinate = [data.lat, data.lon];
+      // console.log(coordinate);
       findHoppiness(coordinate);
+      getTaco(coordinate);
     })
 };
 
-// Function to pull Mexican food from geolocation of brewery card selection
-function getTaco() {
-  // console.log(`We clicked on a card`);
-  // console.log(this.querySelector(`#brewLat`).innerHTML)
-  var documenuUrl = `${documenuApi}&lat=${this.querySelector(`#brewLat`).innerHTML}&lon=${this.querySelector(`#brewLon`).innerHTML}`;
-  console.log(documenuUrl);
+// Function to pull Mexican food from geolocation
+function getTaco(coordinate) {
+  var documenuUrl = `${documenuApi}&lat=${coordinate[0]}&lon=${coordinate[1]}`;
+  // console.log(documenuUrl);
 
   fetch(documenuUrl)
     .then(function (response) {
@@ -108,33 +126,22 @@ function getTaco() {
     .then(function (tacoData) {
       console.log(tacoData);
       for (var i = 0; i < tacoData.data.length; i++) {
-        let template = `<div class="rounded overflow-hidden shadow-lg flex flex-shrink-0 w-1/4 content-between hover:scale-105 bg-indigo-300 hover:bg-indigo-400">
-      <div class="py-2.5 px-2.5 bg-[url('./Assets/pictures/Tacos.jpg')] tacoCard">
-      <div class="font-bold text-xl mb-2">${tacoData.data[i].restaurant_name}</div>
+        let template = `<div class="rounded overflow-hidden shadow-lg flex flex-shrink-0 w-1/4 content-between hover:scale-105 bg-purple-200 hover: bg-purple-300">
+      <div class="py-2.5 px-2.5">
+      <div class="font-bold text-xl mb-2">${data[i].name}</div>
       <p class="text-gray-700 text-base"> Address: 
-      ${tacoData.data[i].address.formatted}
+      ${data[i].street} <br>
+      <span class="pl-16">${data[i].city},
+      ${data[i].state}</span><br>
+          <span class="pl-16"> ${data[i].postal_code}</span>
           </p>
-          <br>`
-        if (tacoData.data[i].restaurant_website != null) {
-          template += websiteAdd(tacoData.data[i].restaurant_website);
-        }
-          template += `<button class="bg-red-500 hover:bg-red-700 text-black font-bold py-2 px-4 rounded">
-          Menu
-         </button>
-         </div>
-         </div>            `;
+          <br>
+          <a href=${data[i].website_url} target="_blank" class="blue-300 underline hover:decoration-2">Website</a><br><br>
+          <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-8 border-2 border-black">${data[i].brewery_type}</span>
+          </div>
+          </div>            `;
         tacoTable.innerHTML += template;
       }
     });
 }
-// Add menu functionality to getTaco menu button
-        //  <button class="btn btn-red bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-8">
-        //   ${tacoData.data[i].menus} 
-        //   </button>
 
-function websiteAdd(data) {
-  // Figure out how to wrap website text when smaller screen size
-  let websiteTemplate = `
-  <a href=${data} target="_blank" class="blue-300 underline hover:decoration-2">${data}</a>`
-  return websiteTemplate;
-}
