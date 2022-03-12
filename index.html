@@ -34,13 +34,15 @@
   <br>
   <br>
   <br>
-  <!-- Breweries Table -->
-  <section class="container">
-    <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
-      <div id="breweryTable" class="rounded overflow-hidden shadow-lg">
-        <img class="w-full" src="./Assets/pictures/tacobouthoppiness2.jpg" alt="Hoppiness">
-        </div>
+  <!-- Brewery Cards -->
+  <h1 class="p-10 content-center text-center">Pick your brewery</h1>
+  <section class="container mx-auto">
+    <div class="p-10 grid w-100">
+      <!-- <img class="w-full" src="./Assets/pictures/tacobouthoppiness2.jpg" alt="Hoppiness"> -->
+      <!-- overflow x auto for scroll bar -->
+      <div id="breweryTable" class="rounded overflow-x-auto shadow-lg flex gap-5">
       </div>
+    </div>
   </section>
   <!-- Taquerias Table -->
   <section class="container items-center justify-left w-1/2">
@@ -55,14 +57,14 @@
       <tbody id="tacoTable" class="text-center"></tbody>
     </table>
   </section>
+  <script src="./Assets/JS/script.js"></script>
+  <script src="./Assets/JS/breweries-script.js"></script>
   <!-- Google Maps API map -->
   <!-- <div id="map"></div> -->
   <!-- <script
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPetPmE9l46u_pcaXze-OkgLHWo3cnwC4&callback=initMap&v=weekly"
   async
 ></script> -->
-  <script src="./Assests/JS/script.js"></script>
-  <script src="./Assests/JS/breweries-script.js"></script>
 </body>
 
 </html>
