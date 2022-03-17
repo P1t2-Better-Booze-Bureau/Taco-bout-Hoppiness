@@ -9,10 +9,11 @@ var cancelBtnEl = document.querySelector(`#cancelBtn`);
 // Used Miguel's key for testing brewery layout to reduce unnecessary pulls
 var documentApiList = ["f2891f69c0b5f586001e03d7f04150cd"];
 var documenuApi =
-  "https://api.documenu.com/v2/restaurants/search/geo?key=442e928049c9bb7b553d48b27474017a&cuisine=Mexican&distance=2&fullmenu";
+  "https://api.documenu.com/v2/restaurants/search/geo?key=5c84bf0ba620e31313ba63c7c9b54297&cuisine=Mexican&distance=2&fullmenu";
 // var documenuApi = "https://api.documenu.com/v2/restaurants/search/geo?key=1d72ed71331751f36558c92ff7f8a0cf&cuisine=Mexican&distance=2&fullmenu";
 // var documenuApi = "https://api.documenu.com/v2/restaurants/search/geo?key=e59184fab7b4752cf7593f7ca4a627f1&cuisine=Mexican&distance=2&fullmenu";
 // additional key: 442e928049c9bb7b553d48b27474017a - Miguel
+// 5c84bf0ba620e31313ba63c7c9b54297
 // KEY FOR DEMO: bb8246f243790c635ad142fe7f2030ba
 //another one for demo: aeb59f84ae3c5fc239e52dd74a168c50
 var zipCodeVariable = "";
@@ -47,7 +48,7 @@ function findHoppiness(coordinate) {
       for (var i = 0; i < data.length; i++) {
         let template = `
         <div class="rounded overflow-hidden shadow-lg flex flex-shrink-0 min-w-1/4 content-between hover:scale-105 bg-indigo-300 hover:bg-indigo-400 bg-auto bg-[url('./Assets/pictures/BeerSuds.jpg')]">
-      <div class="py-2.5 px-2.5 text-left brewCard">
+      <div class="py-2.5 px-2.5 text-left justify-between brewCard">
       
       <div class="font-bold text-xl mb-2">${data[i].name}</div>
       <p class="text-gray-700 text-left text-base"> Address: <br>
@@ -114,18 +115,10 @@ function geocode() {
 // Function to pull Mexican food from geolocation of brewery card selection
 function getTaco() {
   // Scroll Bars
-  var leftTacoHidden = document.getElementById("tacoButtonLeft");
-  var rightTacoHidden = document.getElementById("tacoButtonRight");
-  var tacoBannerSubmit = document.getElementById("tacoBanner");
-  leftTacoHidden.classList.remove("hidden");
-  rightTacoHidden.classList.remove("hidden");
-  tacoBannerSubmit.classList.add("hidden");
 
   // Clear table every time
   tacoTable.innerHTML = "";
-  var documenuUrl = `${documenuApi}&lat=${
-    this.querySelector(`#brewLat`).innerHTML
-  }&lon=${this.querySelector(`#brewLon`).innerHTML}`;
+  var documenuUrl = `${documenuApi}&lat=${this.querySelector(`#brewLat`).innerHTML}&lon=${this.querySelector(`#brewLon`).innerHTML}`;
   if (localStorageTest === "") {
     fetch(documenuUrl)
       .then(function (response) {
@@ -133,6 +126,12 @@ function getTaco() {
       })
 
       .then(function (tacoData) {
+        var leftTacoHidden = document.getElementById("tacoButtonLeft");
+        var rightTacoHidden = document.getElementById("tacoButtonRight");
+        var tacoBannerSubmit = document.getElementById("tacoBanner");
+        leftTacoHidden.classList.remove("hidden");
+        rightTacoHidden.classList.remove("hidden");
+        tacoBannerSubmit.classList.add("hidden");
         console.log(tacoData);
         localStorageTest = tacoData;
         window.localStorage.setItem(
@@ -142,10 +141,10 @@ function getTaco() {
         for (var i = 0; i < tacoData.data.length; i++) {
           let tacoCardTemplate = `
           <div class="rounded overflow-hidden shadow-lg flex flex-shrink-0 min-w-1/4 content-between hover:scale-105 bg-indigo-300 hover:bg-indigo-400">
-        <div class="py-2.5 px-2.5 bg-[url('./Assets/pictures/Tacos.jpg')] tacoCard">
-        <div class="font-bold text-xl mb-2">${tacoData.data[i].restaurant_name}</div>s
-        <p class="text-gray-700 text-base"> Address: 
-        ${tacoData.data[i].address.formatted}
+          <div class="py-2.5 px-2.5 bg-[url('./Assets/pictures/Tacos.jpg')] tacoCard">
+          <div class="font-bold text-xl mb-2">${tacoData.data[i].restaurant_name}</div>s
+          <p class="text-gray-700 text-base"> Address: 
+          ${tacoData.data[i].address.formatted}
             </p>
             <br>`;
           if (tacoData.data[i].restaurant_website != null) {
