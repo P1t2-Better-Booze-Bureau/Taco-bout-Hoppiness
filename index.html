@@ -5,27 +5,54 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <script src="https://cdn.tailwindcss.com"></script>
+
   <title>Taco 'bout Hoppiness</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Rye&family=Train+One&display=swap"
     rel="stylesheet">
-    <link rel="stylesheet" href="./Assets/CSS/style.css">
+  <link rel="stylesheet" href="./Assets/CSS/style.css">  
+  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.3.4/dist/flowbite.min.css" />
+
 </head>
 
 <body class="bg-fixed bg-cover bg-[url('/Assets/pictures/Desert-Background.png')] overflow-x-hidden">
   <nav class="flex items-center justify-around flex-wrap bg-white-500 p-6">
+
     <div class="flex items-center flex-shrink-1 text-white mr-6">
-      <span><img src="./Assets/pictures/Logo.png" class="w-full"></span>
+      <img src="./Assets/pictures/Logo.png" class="w-full">
     </div>
-    <div class="block lg:hidden">
+
+    <button data-collapse-toggle="mobile-menu" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
+      <span class="sr-only">Open main menu</span>
+      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+      <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+    </button>
+
+    <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
+      <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+        <li>
+          <a href="#" class="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page">Home</a>
+        </li>
+        <li>
+          <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+        </li>
+        <li>
+          <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Favorites</a>
+        </li>
+        <li>
+          <a href="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About Us</a>
+        </li>
+      </ul>
     </div>
+
     <form class="w-full max-w-sm" action="#" id="userZip">
       <div class="flex items-center py-10">
-        <!-- Figure out zip code validation -->
         <input
-          class="appearance-none shadow-lg bg-gray-100 border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+          class="appearance-none shadow-lg bg-gray-100 border-none w-full text-g5-Digit Zip Code1 px-2 leading-tight focus:outline-none"
           type="text" onkeydown="javascript: return event.keyCode === 8 ||
           event.keyCode === 46 ? true : !isNaN(Number(event.key))" placeholder="5-Digit Zip Code" aria-label="Zip Code" name="quantity" required minlength="5" maxlength="5" id="zipCode">
         <button
@@ -34,94 +61,105 @@
           🔎 Find Hoppiness
       </div>
     </form>
-    </div>
+
   </nav>
+
   <br>
-  <h1 id="areYouReady" class="hover:animate-bounce font-bold italic text-2xl mb-2 text-center text-violet-900 hover:text-violet-500 hover:scale-105 w-100 font-['Bungee_Inline']">
-    Are you ready to discover hoppiness?</h1>
-    <div class="border-b-4 border-purple-500 pt-12"></div>
+
+  <figure id="areYouReady" class="hover:animate-bounce w-screen font-bold italic text-2xl mb-2 text-center text-violet-900 hover:text-violet-500 hover:scale-105 w-100 font-['Bungee_Inline']">  
+    <img src="./Assets/pictures/Tumbleweed01.gif" class="fixed w-screen translate-y-60">    
+    Are you ready to discover hoppiness?
+  </figure>
+  
+  <!-- Page Break -->
+  <figure class="border-b-2 border-purple-500 pt-12 shadow-lg"></figure>
+
   <br>
-  <!-- Brewery Cards -->
-  <h1 class="p-10 content-center text-center text-xl hover:scale-105 font-bold font-['Bungee_Inline']" id="brewBanner">PICK YOUR BREWERY
-    <img src="./Assets/pictures/8-Bit-Beer.png" class="inline-block mb-6 p-1 w-14 ">
-  </h1>
-  <section class="container mx-auto justify-center">
-    <div class="p-10 grid w-100 breweriesContainer ">
-      <button class="buttonLeft hidden opacity-25 hover:opacity-100" id="brewButtonLeft"><</button>
-      <!-- <img class="w-full" src="./Assets/pictures/tacobouthoppiness2.jpg" alt="Hoppiness"> -->
-      <!-- overflow x auto for scroll bar -->
-      <div id="breweryTable" class="rounded overflow-x-hidden overflow-y-clip shadow-lg flex gap-5 min-w flex-col sm:justify-none sm:flex-row no-scrollbar scroll-smooth">
-      </div>
-      <button class="buttonRight hidden opacity-25 hover:opacity-100" id="brewButtonRight">></button>
-    </div>
-  </section>
-  <!-- Taco Table -->
-  <h1 class="hidden p-10 content-center text-center text-xl hover:scale-105 font-bold font-['Bungee_Inline']" id="tacoBanner">Here are nearby
-    taquerias <img src="./Assets/pictures/8-Bit-Tacos.png" class="inline-block mb-1 p-1 w-14"></h1>
-  <section class="container mx-auto justify-center">
-    <div class="p-10 grid w-100 tacosContainer">
-      <button class="buttonLeft hidden opacity-25 hover:opacity-100" id="tacoButtonLeft"><</button>
-      <!-- <img class="w-full" src="./Assets/pictures/tacobouthoppiness2.jpg" alt="Hoppiness"> -->
-      <!-- overflow x auto for scroll bar -->
-      <div id="tacoTable" class="rounded overflow-x-hidden overflow-y-clip shadow-lg flex gap-5 min-w flex-col sm:justify-none sm:flex-row no-scrollbar scroll-smooth">
-        <button class="buttonRight hidden opacity-25 hover:opacity-100" id="tacoButtonRight">></button>
-      </div>
-    </div>
-  </section>
+
+  <main>
+    <!-- Brewery Cards -->
+    <article>
+      <header>
+        <section class="px-10 content-center text-center text-xl hover:scale-105 font-bold font-['Bungee_Inline']" id="brewBanner">ENTER YOUR ZIPCODE TO
+          </section>
+        <section class="px-10 content-center text-center text-xl hover:scale-105 font-bold font-['Bungee_Inline']" id="brewBanner">PICK YOUR BREWERY
+        <img src="./Assets/pictures/8-Bit-Beer.png" class="inline-block mb-6 p-1 w-14 ">
+        </section>
+      </header>
+
+      <section class="container mx-auto justify-center">
+        <div class="p-10 grid w-100 relative">
+
+          <button class="absolute left-0 h-64 top-10 text-5xl font-extrabold p-1 scroll-smooth hidden opacity-50 hover:opacity-100" id="brewButtonLeft"><</button>
+
+          <!-- <img class="w-full" src="./Assets/pictures/tacobouthoppiness2.jpg" alt="Hoppiness"> -->
+          <output id="breweryTable" class="rounded relative overflow-x-hidden overflow-y-clip shadow-lg flex gap-5 min-w flex-col sm:justify-none sm:flex-row no-scrollbar scroll-smooth">
+          </output>
+
+          <button class="absolute right-0 h-64 top-10 text-5xl font-extrabold p-1 scroll-smooth hidden opacity-50 hover:opacity-100" id="brewButtonRight">></button>
+
+        </div>
+      </section>
+    </article>
+
+    <!-- Taco Table -->
+    <article>
+      <header>
+        <section class="hidden p-10 content-center text-center text-xl hover:scale-105 font-bold font-['Bungee_Inline']" id="tacoBanner">Here are nearby
+        taquerias <img src="./Assets/pictures/8-Bit-Tacos.png" class="inline-block mb-1 p-1 w-14"></section>
+      </header>
+      <section class="container mx-auto justify-center">
+        <div class="p-10 grid w-100 tacosContainer">
+          <button class="absolute left-0 h-72 top-12 text-5xl font-extrabold p-1 scroll-smooth hidden opacity-50 hover:opacity-100" id="tacoButtonLeft"><</button>
+          <!-- <img class="w-full" src="./Assets/pictures/tacobouthoppiness2.jpg" alt="Hoppiness"> -->
+
+          <output id="tacoTable" class="rounded overflow-x-hidden overflow-y-clip shadow-lg flex gap-5 min-w flex-col sm:justify-none sm:flex-row no-scrollbar scroll-smooth"></output>
+
+          <button class="absolute right-0 h-64 top-10 text-5xl font-extrabold p-1 scroll-smooth hidden opacity-50 hover:opacity-100" id="tacoButtonRight">></button>
+        </div>        
+      </section>
+    </article>
+  </main>
  
   <div><img src="./Assets/pictures/8-Bit-Cactus.png" class="fixed w-1/12 bottom-0 left-7 -z-10 hover:animate-bounce">
     <img src="./Assets/pictures/8-Bit-Cactus-Invert.png" class="fixed w-1/12 bottom-0 right-7 -z-10 hover:animate-bounce">
   </div>
-   <!-- Modal location -->
+
+  <!-- Modal location -->
   <!-- Modal tutorial: https://www.youtube.com/watch?v=VURZvau80Jo -->
   <!-- Add hidden/flex toggle function in javascript -->
-  <div class="bg-black inset-0 bg-opacity-50 flex invisible justify-center items-center" id="menuModal">
-    <div class="bg-gray-200 max-w-sm py-3 px-4 rounded shadow-xl text-gray-800">
-      <div class="flex items-center text-lg text-bold bg-white-200">
-        <h4>Taco Menu</h4>
+  <div aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center h-modal md:h-full md:inset-0" id="menuModal">
+    <div class="relative px-4 w-full max-w-2xl h-full md:h-auto">
+      <div class="relative bg-white rounded-lg shadow">
+        <div class="flex justify-between items-start p-5 rounded-t border-b">
+          <h4 class="text-xl font-semibold text-gray-900 lg:text-2xl dark:text-white">Taco Menu</h4>
+        </div>
+        <div class="p-6 space-y-6 text-sm">
+          <!-- Make filling this modal a list of taco menu items -->
+          <ul class="text-base leading-relaxed text-gray-500 list-outside list-disc" id="tacoMenuList"></ul>
+        </div>
+        <div class="flex items-center p-6 space-x-2 rounded-b justify-between border-t border-gray-200">
+          <button class="px-3 py-2 rounded font-bold bg-red-300 hover:bg-red-500 border-red-500 hover:border-red-300 hover:opacity-50 hover:text-red-800 font-['Bungee_Inline']" data-modal-toggle="menuModal" id="cancelBtn">Cancel</button>
+          <button class="px-3 py-2 rounded font-bold bg-green-300 hover:bg-green-500 border-green-500 hover:border-green-300 font-['Bungee_Inline']" id="saveBtn">Add Combiniation to Favorites</button>
+        </div>
       </div>
-      <div class="mt-2 text-sm">
-        <!-- Make filling this modal a list of taco menu items -->
-        <ul class=" mx-5 list-outside list-disc" id="tacoMenuList"></ul>
       </div>
-      <div class="mt-3 flex justify-center space-x-4">
-        <button class="px-3 py-2 rounded hover:bg-red-300 hover:opacity-50 hover:text-red-800" id="cancelBtn">Cancel</button>
-        <button class="px-3 py-2 rounded bg-green-800 text-zinc-400 hover:bg-green-600" id="saveBtn">Add Combiniation to Favorites</button>
-      </div>
-    </div>
   </div>
-  <script src="./Assets/JS/script.js"></script>
-  <script src="./Assets/JS/breweries-script.js"></script>
-  <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+
   <script>
+
     var fname = document.getElementById("zipCode");
     fname.addEventListener("input", () => {
       if (fname.validity.tooLong || fname.validity.tooShort || fname.validity.valueMissing) {
-      fname.setCustomValidity("Gotta be 5 numbers, amigo.");
-      fname.reportValidity();
-  } else { fname.setCustomValidity(""); };
-      //scrolling left/right 
-      var breweriesScrollPosition = 0;
-      var breweriesRight = document.querySelector(".buttonRight");
-      var breweriesLeft = document.querySelector(".buttonLeft");
-      
-      //display cards to the right
-      breweriesRight.addEventListener("click", function(event){
-        // console.log("MOVE RIGHT", event.target)
-          breweriesScrollPosition += 640;
-          var breweryTable = document.querySelector("#breweryTable").scrollLeft = breweriesScrollPosition;
-        })
+        fname.setCustomValidity("Gotta be 5 numbers, amigo.");
+        fname.reportValidity();
+      } else { fname.setCustomValidity(""); 
+    };
 
-        //display cards to the left
-        breweriesLeft.addEventListener("click", function(event){
-        // console.log("MOVE LEFT", event.target)
-          breweriesScrollPosition -= 640;
-          var breweryTable = document.querySelector("#breweryTable").scrollLeft = breweriesScrollPosition;
-        })
-      })
-
-
-  </script>
+    </script>
+    <script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></script>
+    <script src="./Assets/JS/script.js"></script>
+    <script src="./Assets/JS/breweries-script.js"></script>
 </body>
 
 </html>

@@ -4,70 +4,12 @@
 
 @layer base {
     html { 
-        font-family: Bungee_Inline
+        font-family: Bungee_Inline;
     }
 }
 
-.brewCard {
-    width: 300px;
-    text-align: left;
-}
-
-#breweryTable {
-    overflow-x: auto;
-    position: relative;
-}
-
-.brewCard p{
-    text-align: left;
-}
-
-.breweriesContainer {
-    position: relative;
-}
-
-.breweriesContainer .buttonLeft {
-    position: absolute;
-    top: 156px;
-    left: 0;
-    font-size: 50px;
-    font-weight: bold;
-    background-color: rgba(255, 255, 255, .75);
-    padding: 1rem 0;
-    scroll-behavior: smooth;
-}
-
-.breweriesContainer .buttonRight {
-    position: absolute;
-    top: 156px;
-    right: 0;
-    font-size: 50px;
-    font-weight: bold;
-    background-color: rgba(255, 255, 255, .75);
-    padding: 1rem 0;
-    scroll-behavior: smooth;
-}
-
-.tacosContainer .buttonRight {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    font-size: 50px;
-    font-weight: bold;
-    background-color: rgba(255, 255, 255, .75);
-    padding: 1rem 0;
-    scroll-behavior: smooth;
-}
-
-.tacosContainer .buttonLeft {
-    position: absolute;
-    top: 70px;
-    left: 0;
-    font-size: 50px;
-    font-weight: bold;
-    background-color: rgba(255, 255, 255, .75);
-    padding: 1rem 0;
-    scroll-behavior: smooth;
+.bungee {
+    font-family: Bungee_Inline;
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -79,15 +21,3 @@
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
-
-
-/* #breweryTable::after {
-    content: ">";
-    font-size: 50px;
-    font-weight: bold;
-    position: absolute;
-    right: 0;
-    top: 100px;
-    background-color: rgba(255, 255, 255, .75);
-    padding: 1rem;
-} */
