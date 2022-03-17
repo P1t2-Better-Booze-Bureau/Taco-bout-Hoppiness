@@ -4,8 +4,12 @@
 
 @layer base {
     html { 
-        font-family: Bungee_Inline
+        font-family: Bungee_Inline;
     }
+}
+
+.bungee {
+    font-family: Bungee_Inline;
 }
 
 .brewCard {
