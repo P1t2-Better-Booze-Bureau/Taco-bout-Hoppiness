@@ -1,7 +1,7 @@
 // Used Miguel's key for testing brewery layout to reduce unnecessary pulls
 var documentApiList = ["f2891f69c0b5f586001e03d7f04150cd"];
 var documenuApi =
-"https://api.documenu.com/v2/restaurants/search/geo?key=5c84bf0ba620e31313ba63c7c9b54297&cuisine=Mexican&distance=2&fullmenu";
+  "https://api.documenu.com/v2/restaurants/search/geo?key=5c84bf0ba620e31313ba63c7c9b54297&cuisine=Mexican&distance=2&fullmenu";
 // var documenuApi = "https://api.documenu.com/v2/restaurants/search/geo?key=1d72ed71331751f36558c92ff7f8a0cf&cuisine=Mexican&distance=2&fullmenu";
 // var documenuApi = "https://api.documenu.com/v2/restaurants/search/geo?key=e59184fab7b4752cf7593f7ca4a627f1&cuisine=Mexican&distance=2&fullmenu";
 // additional key: 442e928049c9bb7b553d48b27474017a - Miguel
@@ -9,24 +9,22 @@ var documenuApi =
 // KEY FOR DEMO: bb8246f243790c635ad142fe7f2030ba
 //another one for demo: aeb59f84ae3c5fc239e52dd74a168c50
 
-
 var breweryTable = document.getElementById("breweryTable");
 var tacoTable = document.getElementById("tacoTable");
 var buttonClick = document.getElementById("submitButton");
 var menuModal = document.getElementById(`menuModal`);
 var saveBtn = document.getElementById(`saveBtn`);
 var cancelBtnEl = document.querySelector(`#cancelBtn`);
-var zipCodeInput = document.getElementById('zipCode');
+var zipCodeInput = document.getElementById("zipCode");
 var zipCodeVariable = "";
 var coordinate = [];
 var localStorageTest = localStorage.getItem(`tacoTest`);
 
-// Stops the tumbleweeds from being displayed on the screen 
-// document.getElementById('submitButton').onclick = function(event) {
-  
-  //   document.getElementById('tumbleweed').className = "hidden";
-  // }
-  
+// Stops the tumbleweeds from being displayed on the screen
+document.getElementById("submitButton").onclick = function (event) {
+  document.getElementById("tumbleweed").className = "hidden";
+};
+
 // Starts function on enter key being hit in the input section
 zipCodeInput.addEventListener("keydown", function (e) {
   if (e.key == "Enter") {
@@ -34,15 +32,15 @@ zipCodeInput.addEventListener("keydown", function (e) {
     geocode();
   }
 });
-  
+
 // Start on button click
 buttonClick.addEventListener("click", geocode);
 
 // document.getElementById('submitButton').onclick = function(event) {
-  
+
 //   document.getElementById('brewBanner').className = "show";
 // }
-  
+
 // Function to pull geolocation from user zip code
 function geocode() {
   var leftBrewHidden = document.getElementById("brewButtonLeft");
@@ -74,7 +72,6 @@ if (localStorageTest === null) {
   console.log(localStorageTest);
 }
 
-
 // Function to pull brewery information based on geolocation
 function findHoppiness(coordinate) {
   var openBreweryDBUrl =
@@ -104,11 +101,11 @@ function findHoppiness(coordinate) {
             ${data[i].street} <br>
             ${data[i].city}, ${data[i].state}<br>
             ${data[i].postal_code}</p><br>`;
-            if (data[i].website_url != null) {
-              template += websiteAdd(data[i].website_url);
-            }
+        if (data[i].website_url != null) {
+          template += websiteAdd(data[i].website_url);
+        }
 
-            template += `<br>
+        template += `<br>
             <div class="invisible h-1" id="brewLat">${data[i].latitude}</div>
             <div class="invisible h-1" id="brewLon">${data[i].longitude}</div>
           
@@ -128,15 +125,15 @@ function findHoppiness(coordinate) {
     });
 }
 
-
-
 // Function to pull Mexican food from geolocation of brewery card selection
 function getTaco() {
   // Scroll Bars
 
   // Clear table every time
   tacoTable.innerHTML = "";
-  var documenuUrl = `${documenuApi}&lat=${this.querySelector(`#brewLat`).innerHTML}&lon=${this.querySelector(`#brewLon`).innerHTML}`;
+  var documenuUrl = `${documenuApi}&lat=${
+    this.querySelector(`#brewLat`).innerHTML
+  }&lon=${this.querySelector(`#brewLon`).innerHTML}`;
   if (localStorageTest === "") {
     fetch(documenuUrl)
       .then(function (response) {
@@ -166,11 +163,11 @@ function getTaco() {
               <p class="bg-amber-700 text-slate-100 text-base"> Address: 
               ${tacoData.data[i].address.formatted}</p><br>`;
 
-              if (tacoData.data[i].restaurant_website != null) {
-                tacoCardTemplate += websiteAdd(tacoData.data[i].restaurant_website);
-              }
+          if (tacoData.data[i].restaurant_website != null) {
+            tacoCardTemplate += websiteAdd(tacoData.data[i].restaurant_website);
+          }
 
-              tacoCardTemplate += `<br>
+          tacoCardTemplate += `<br>
               <button class="bg-red-500 hover:bg-red-700 text-black font-bold py-2 px-4 rounded tacoMenu">
                 Taco Menu
               </button>
@@ -187,20 +184,26 @@ function getTaco() {
       });
   } else {
     for (var i = 0; i < localStorageTest.data.length; i++) {
+      var leftTacoHidden = document.getElementById("tacoButtonLeft");
+      var rightTacoHidden = document.getElementById("tacoButtonRight");
+      var tacoBannerSubmit = document.getElementById("tacoBanner");
+      leftTacoHidden.classList.remove("hidden");
+      rightTacoHidden.classList.remove("hidden");
+      tacoBannerSubmit.classList.add("hidden");
       let tacoCardTemplate = `
       <div class="rounded overflow-hidden shadow-lg flex flex-shrink-0 min-w-1/4 content-between hover:scale-105 bg-indigo-300 hover:bg-indigo-400 bungee font-bold bg-[url('./Assets/pictures/Tacos.jpg')]">
-      <div class="py-2.5 px-2.5 text-left justify-between hover:bg-indigo-400 hover:bg-opacity-50 tacoCard">
-      <div class="font-bold text-xl mb-2">${localStorageTest.data[i].restaurant_name} </div>
-      <p class="text-black font-semibold text-left text-base class="bg-amber-700 text-slate-100 text-base"> Address: ${localStorageTest.data[i].address.formatted}</p><br>`;
-      if (localStorageTest.data[i].restaurant_website != null) {
-        tacoCardTemplate += websiteAdd(
-          localStorageTest.data[i].restaurant_website
-        );
-      }
-      tacoCardTemplate += `<br><button class="bg-red-500 hover:bg-red-700 text-black font-bold py-2 px-4 rounded tacoMenuBtn" data-modal-toggle="menuModal">Taco Menu</button>
-      <div class="invisible">${i}</div>
-       </div>
-       </div>            `;
+        <div class="py-2.5 px-2.5 text-left justify-between hover:bg-indigo-400 hover:bg-opacity-50 tacoCard">
+          <div class="font-bold text-xl mb-2">${localStorageTest.data[i].restaurant_name} </div>
+          <p class="text-black font-semibold text-left text-base class="bg-amber-700 text-slate-100 text-base"> Address: ${localStorageTest.data[i].address.formatted}</p><br>`;
+          if (localStorageTest.data[i].restaurant_website != null) {
+            tacoCardTemplate += websiteAdd(
+              localStorageTest.data[i].restaurant_website
+            );
+          }
+          tacoCardTemplate += `<br><button class="bg-red-500 hover:bg-red-700 text-black font-bold py-2 px-4 rounded tacoMenuBtn" data-modal-toggle="menuModal">Taco Menu</button>
+          <div class="invisible">${i}</div>
+          </div>
+      </div>`;
       tacoTable.innerHTML += tacoCardTemplate;
     }
     var menuButtonEl = document.getElementsByClassName(`tacoMenuBtn`);
@@ -217,7 +220,7 @@ function getTaco() {
 //   </button>
 
 function websiteAdd(data) {
-  var removeURL = data.replace(/^https?:\/\//, '');
+  var removeURL = data.replace(/^https?:\/\//, "");
   // Figure out how to wrap website text when smaller screen size
   let websiteTemplate = `
   <a href=${data} target="_blank" class="object-cover text-black text-xs font-semibold no-underline hover:decoration-2 hover:underline">${removeURL}</a>`;
