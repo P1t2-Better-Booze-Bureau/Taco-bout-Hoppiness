@@ -18,12 +18,32 @@ var cancelBtnEl = document.querySelector(`#cancelBtn`);
 var zipCodeInput = document.getElementById("zipCode");
 var zipCodeVariable = "";
 var coordinate = [];
+var brewIndex = "";
+var tacoIndex = "";
+var breweryApiData = "";
+var tacoApiData = "";
+// Pull & validate from localstorage user favorites
+var favorites = localStorage.getItem(`favorites`);
+if (favorites === null) {
+  favorites = {brewery: [], tacos: [],};
+} else {
+  favorites = JSON.parse(favorites);
+  console.log(favorites);
+}
+
+// Test Object from documenu API
 var localStorageTest = localStorage.getItem(`tacoTest`);
+if (localStorageTest === null) {
+  localStorageTest = "";
+} else {
+  localStorageTest = JSON.parse(localStorageTest);
+  console.log(localStorageTest);
+}
 
 // Stops the tumbleweeds from being displayed on the screen
-document.getElementById("submitButton").onclick = function (event) {
-  document.getElementById("tumbleweed").className = "hidden";
-};
+// document.getElementById("submitButton").onclick = function (event) {
+//   document.getElementById("tumbleweed").className = "hidden";
+// };
 
 // Starts function on enter key being hit in the input section
 zipCodeInput.addEventListener("keydown", function (e) {
@@ -46,9 +66,11 @@ function geocode() {
   var leftBrewHidden = document.getElementById("brewButtonLeft");
   var rightBrewHidden = document.getElementById("brewButtonRight");
   var brewBannerSubmit = document.getElementById("brewBanner");
+  var tumbleweed = document.getElementById("tumbleweed");
   leftBrewHidden.classList.remove("hidden");
   rightBrewHidden.classList.remove("hidden");
   brewBannerSubmit.classList.add("hidden");
+  // tumbleweed.classList.add("hidden");
   zipCodeVariable = document.getElementById("zipCode").value;
   var openWeatherApi = `https://api.openweathermap.org/geo/1.0/zip?appid=d20682e8d5e2100a9c4e1e2f42e32a85&zip=${zipCodeVariable},US`;
 
@@ -63,13 +85,6 @@ function geocode() {
       console.log(`error ${response.status}`);
     }
   });
-}
-
-if (localStorageTest === null) {
-  localStorageTest = "";
-} else {
-  localStorageTest = JSON.parse(localStorageTest);
-  console.log(localStorageTest);
 }
 
 // Function to pull brewery information based on geolocation
@@ -91,8 +106,9 @@ function findHoppiness(coordinate) {
     // loop to add data to table
     .then(function (data) {
       for (var i = 0; i < data.length; i++) {
+        breweryApiData = data;
         let template = `
-        <div class="rounded overflow-hidden shadow-lg flex flex-shrink-0 min-w-1/4 content-between hover:scale-105 shadow-2xl bg-cover bg-[url('./Assets/pictures/BeerSuds.jpg')] font-['Bungee_Inline']">
+        <div class="rounded-2xl overflow-hidden shadow-lg flex flex-shrink-0 min-w-1/4 content-between hover:scale-105 shadow-2xl z-10 bg-cover bg-[url('./Assets/pictures/BeerSuds.jpg')] font-['Bungee_Inline']">
 
           <div class="py-2.5 px-2.5 text-left justify-between hover:bg-indigo-400 hover:bg-opacity-50 w-72 text-left brewCard">
 
@@ -110,6 +126,7 @@ function findHoppiness(coordinate) {
             <div class="invisible h-1" id="brewLon">${data[i].longitude}</div>
           
             <div class="inline-block bg-gray-200 rounded-full px-3 py-0 text-sm font-semibold text-gray-700 mr-2 mb-0 border-2 border-black">${data[i].brewery_type}</div>
+            <div class="invisible h-1" id="brewIndex">${i}</div>
           </div>
         </div>`;
 
@@ -118,7 +135,6 @@ function findHoppiness(coordinate) {
 
       // Brewery card event listener to search for tacos
       var cardEl = document.getElementsByClassName(`brewCard`);
-      console.log(cardEl);
       for (let i = 0; i < cardEl.length; i++) {
         cardEl[i].addEventListener(`click`, getTaco);
       }
@@ -131,9 +147,11 @@ function getTaco() {
 
   // Clear table every time
   tacoTable.innerHTML = "";
-  var documenuUrl = `${documenuApi}&lat=${
-    this.querySelector(`#brewLat`).innerHTML
-  }&lon=${this.querySelector(`#brewLon`).innerHTML}`;
+  // Adds lat and lon to documenuApi based on card selected.
+  var documenuUrl = `${documenuApi}&lat=${this.querySelector(`#brewLat`).innerHTML}&lon=${this.querySelector(`#brewLon`).innerHTML}`;
+  // Saves index of brewery card selected
+  brewIndex = this.querySelector(`#brewIndex`).innerHTML;
+  console.log(brewIndex);
   if (localStorageTest === "") {
     fetch(documenuUrl)
       .then(function (response) {
@@ -146,16 +164,14 @@ function getTaco() {
         var tacoBannerSubmit = document.getElementById("tacoBanner");
         leftTacoHidden.classList.remove("hidden");
         rightTacoHidden.classList.remove("hidden");
-        tacoBannerSubmit.classList.add("hidden");
-        console.log(tacoData);
+        tacoBannerSubmit.classList.add("show");
+        // Saves API pull into global scope variable
+        tacoApiData = tacoData;
         localStorageTest = tacoData;
-        window.localStorage.setItem(
-          `tacoTest`,
-          JSON.stringify(localStorageTest)
-        );
+        window.localStorage.setItem(`tacoTest`, JSON.stringify(localStorageTest));
         for (var i = 0; i < tacoData.data.length; i++) {
           let tacoCardTemplate = `
-          <div class="rounded overflow-hidden shadow-lg flex flex-shrink-0 min-w-1/4 content-between hover:scale-105 shadow-2xl bg-cover bg-[url('./Assets/pictures/Tacos.jpg')]">
+          <div class="rounded-2xl overflow-hidden shadow-lg flex flex-shrink-0 min-w-1/4 content-between hover:scale-105 shadow-2xl bg-cover bg-[url('./Assets/pictures/Tacos.jpg')]">
             <div class="py-2.5 px-2.5 tacoCard">
 
               <div class="font-bold text-xl mb-2">${tacoData.data[i].restaurant_name}</div>
@@ -184,21 +200,23 @@ function getTaco() {
       });
   } else {
     for (var i = 0; i < localStorageTest.data.length; i++) {
+      // Scroll Feature
       var leftTacoHidden = document.getElementById("tacoButtonLeft");
       var rightTacoHidden = document.getElementById("tacoButtonRight");
       var tacoBannerSubmit = document.getElementById("tacoBanner");
       leftTacoHidden.classList.remove("hidden");
       rightTacoHidden.classList.remove("hidden");
       tacoBannerSubmit.classList.add("hidden");
+      // Saves API pull into global scope variable
+      tacoApiData = localStorageTest.data;
       let tacoCardTemplate = `
-      <div class="rounded overflow-hidden shadow-lg flex flex-shrink-0 min-w-1/4 content-between hover:scale-105 bg-indigo-300 hover:bg-indigo-400 bungee font-bold bg-[url('./Assets/pictures/Tacos.jpg')]">
-        <div class="py-2.5 px-2.5 text-left justify-between hover:bg-indigo-400 hover:bg-opacity-50 tacoCard">
-          <div class="font-bold text-xl mb-2">${localStorageTest.data[i].restaurant_name} </div>
-          <p class="text-black font-semibold text-left text-base class="bg-amber-700 text-slate-100 text-base"> Address: ${localStorageTest.data[i].address.formatted}</p><br>`;
+      <div class="rounded-2xl overflow-hidden shadow-lg flex flex-shrink-0 min-w-1/4 content-between hover:scale-105 shadow-2xl z-10 bg-cover bg-[url('./Assets/pictures/Tacos.jpg')]">
+        
+        <div class="py-2.5 px-2.5 text-left justify-between hover:bg-indigo-400 hover:bg-opacity-50 w-72 text-left shadow-lg shadow-white tacoCard">
+          <div class="font-extrabold text-xl h-1/4 mb-2">${localStorageTest.data[i].restaurant_name} </div>
+          <p class="text-black font-semibold text-left text-base"> Address: ${localStorageTest.data[i].address.formatted}</p><br>`;
           if (localStorageTest.data[i].restaurant_website != null) {
-            tacoCardTemplate += websiteAdd(
-              localStorageTest.data[i].restaurant_website
-            );
+            tacoCardTemplate += websiteAdd(localStorageTest.data[i].restaurant_website);
           }
           tacoCardTemplate += `<br><button class="bg-red-500 hover:bg-red-700 text-black font-bold py-2 px-4 rounded tacoMenuBtn" data-modal-toggle="menuModal">Taco Menu</button>
           <div class="invisible">${i}</div>
@@ -207,17 +225,11 @@ function getTaco() {
       tacoTable.innerHTML += tacoCardTemplate;
     }
     var menuButtonEl = document.getElementsByClassName(`tacoMenuBtn`);
-    console.log(menuButtonEl);
     for (let i = 0; i < menuButtonEl.length; i++) {
       menuButtonEl[i].addEventListener(`click`, getTacoMenu);
     }
   }
 }
-
-// Add menu functionality to getTaco menu button
-//  <button class="btn btn-red bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-8">
-//   ${tacoData.data[i].menus}
-//   </button>
 
 function websiteAdd(data) {
   var removeURL = data.replace(/^https?:\/\//, "");
@@ -227,25 +239,20 @@ function websiteAdd(data) {
   return websiteTemplate;
 }
 
-// function toggleModal() {
-//   menuModal.classList.toggle(`invisible`);
-//   menuModal.classList.toggle(`visible`);
-// }
-
 function getTacoMenu() {
   // Add JS to pull taco items from object within menu, and display taco menu within #tacoMenuList
   // Search through Object credit: https://stackoverflow.com/questions/8517089/js-search-in-object-values
-  console.log(`Taco Menu was clicked`);
   var results = [];
   toggleModal(`menuModal`, true);
-  index = this.nextElementSibling.innerHTML;
-  console.log(index);
-  object = localStorageTest.data[index].menus;
-  console.log(object);
+  tacoIndex = this.nextElementSibling.innerHTML;
+  console.log(brewIndex, tacoIndex);
+  // var object = localStorageTest.data[index].menus;
+  // console.log(object);
+  // console.log(object.menu_sections);
   // Searches for tacos in menu, pusshes to an array
   // for (let i = 0; i < object.length; i++) {
   //   for(key in object[i]){
-  //    if(object[i][`key`].indexOf(`taco`) != -1){
+  //    if(object[i][`key`].indexOf(`Taco`) != -1){
   //        results.push(object[i]);
   //    }
   //  }
@@ -254,6 +261,15 @@ function getTacoMenu() {
   // Loop to add new <li> with each
 }
 
-// cancelBtnEl.addEventListener(`click`, toggleModal(`menuModal`, false));
-
+saveBtn.addEventListener(`click`, savePairing)
 // Make saveBtn save both brewery and taco location objects in to local storage
+
+function savePairing(event) {  
+  event.preventDefault;
+  console.log(brewIndex, tacoIndex);
+  favorites.brewery.push(breweryApiData[brewIndex]);
+  favorites.tacos.push(tacoApiData[tacoIndex]);
+  console.log(favorites);
+  window.localStorage.setItem(`favorites`, JSON.stringify(favorites));
+
+}
