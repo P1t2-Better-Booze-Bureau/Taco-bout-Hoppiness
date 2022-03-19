@@ -22,7 +22,7 @@ function populateFavorites () {
 
 							<td class="lg:py-4 lg:px-6 py-1 px-1 text-sm border-2 flex-initial font-medium text-gray-900 whitespace-nowrap">  
 												
-								<div class="rounded-2xl overflow-hidden shadow-lg p-1 h-max lg:p-2.5 text-left justify-between text-left hover:scale-105 z-10 bg-cover bg-[url('./Assets/pictures/BeerSuds.jpg')]">
+								<div class="card-shadow  rounded-2xl overflow-hidden shadow-lg p-1 h-max lg:p-2.5 text-left justify-between text-left hover:scale-105 z-10 bg-cover bg-[url('./Assets/pictures/BeerSuds.jpg')]">
 	
 									<div class="font-bold flex-wrap lg:flex-none lg:font-extrabold text-sm lg:text-lg lg:h-1/4 mb-2">${favoriteBreweries[i].name}</div>
 
@@ -43,7 +43,7 @@ function populateFavorites () {
 
 							<td class="lg:py-4 lg:px-6 py-1 px-1 text-sm border-2 flex-initial font-medium text-gray-900 whitespace-nowrap">
 																																		
-								<div class="rounded-2xl overflow-hidden shadow-lg p-1 h-max lg:p-2.5 text-left justify-between text-left hover:scale-105 z-10 bg-cover bg-[url('./Assets/pictures/Tacos.jpg')]">
+								<div class="card-shadow  rounded-2xl overflow-hidden shadow-lg p-1 h-max lg:p-2.5 text-left justify-between text-left hover:scale-105 z-10 bg-cover bg-[url('./Assets/pictures/Tacos.jpg')]">
 
 									<div class="font-bold flex-wrap lg:flex-none lg:font-extrabold text-sm lg:text-lg lg:h-1/4 mb-2">${favoriteTacos[i].restaurant_name}</div>
 							
