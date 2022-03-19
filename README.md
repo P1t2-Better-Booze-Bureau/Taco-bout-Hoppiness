@@ -49,9 +49,9 @@ We would like to credit the following for helping us :
 
 The tailwind and flowbite documentation sites for helping us style our site.
 
-The Documenu API: (https://documenu.com/)
-The Open Weather GeoCoding API: (https://openweathermap.org/api/)geocoding-api
-The Open Brewery API: (https://www.openbrewerydb.org/)
+The Documenu API: https://documenu.com/
+The Open Weather GeoCoding API: https://openweathermap.org/api/geocoding-api
+The Open Brewery API: https://www.openbrewerydb.org/
 
 Artwork came from the following:
 - Tumbleweed: https://images.uncyc.org/commons/8/83/Tumbleweed01.gif
