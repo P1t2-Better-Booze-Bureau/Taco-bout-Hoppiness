@@ -24,7 +24,7 @@ function populateFavorites () {
 												
 								<div class="rounded-2xl overflow-hidden shadow-lg p-1 h-max lg:p-2.5 text-left justify-between text-left hover:scale-105 z-10 bg-cover bg-[url('./Assets/pictures/BeerSuds.jpg')]">
 	
-									<div class="font-bold flex-wrap lg:flex-none lg:font-extrabold text-sm lg:text-lg h-1/2 lg:h-1/4 mb-2">${favoriteBreweries[i].name}</div>
+									<div class="font-bold flex-wrap lg:flex-none lg:font-extrabold text-sm lg:text-lg lg:h-1/4 mb-2">${favoriteBreweries[i].name}</div>
 
 									<p class="text-black flex-initial font-semibold text-left text-xs lg:text-lg"> Address: <br>
 									${favoriteBreweries[i].street} <br>
@@ -45,7 +45,7 @@ function populateFavorites () {
 																																		
 								<div class="rounded-2xl overflow-hidden shadow-lg p-1 h-max lg:p-2.5 text-left justify-between text-left hover:scale-105 z-10 bg-cover bg-[url('./Assets/pictures/Tacos.jpg')]">
 
-									<div class="font-bold flex-wrap lg:flex-none lg:font-extrabold text-sm lg:text-lg h-1/2 lg:h-1/4 mb-2">${favoriteTacos[i].restaurant_name}</div>
+									<div class="font-bold flex-wrap lg:flex-none lg:font-extrabold text-sm lg:text-lg lg:h-1/4 mb-2">${favoriteTacos[i].restaurant_name}</div>
 							
 									<p class="text-black flex-initial font-semibold text-left text-xs lg:text-lg"> 
 										Address: <br>

@@ -9,6 +9,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <title>Taco 'bout Hoppiness</title>
+  <link rel="icon" type="image/x-icon" href="./Assets/pictures/favicon.ico">
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,10 +19,10 @@
   <link rel="stylesheet" href="https://unpkg.com/flowbite@1.3.4/dist/flowbite.min.css" />
 </head>
 
-<body class="bg-fixed bg-cover bg-[url('/Assets/pictures/Desert-Background.png')] overflow-x-hidden">
+<body class="bg-fixed bg-cover bg-[url('./Assets/pictures/Desert-Background.png')] overflow-x-hidden">
   <nav class="flex lg:flex-row flex-col items-center justify-around flex-wrap bg-white-500 p-6">
     <div class="flex items-center flex-shrink-1 text-white mr-6">
-      <img src="/Assets/pictures/Logo.png" class="w-full" />
+      <img src="./Assets/pictures/Logo.png" class="w-full" />
     </div>
 
     <button data-collapse-toggle="mobile-menu" type="button"
@@ -43,18 +44,17 @@
     <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
       <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium font-['Bungee_Inline']">
         <li>
-          <a href="./index.html" class="block py-2 pr-4 pl-3 text-violet-900 rounded-lg font-extrabold md:font-extrabold md:hover:bg-transparent md:border-0 md:p-0 md:text-gray-600 
-          hover:ring-2 hover:ring-red-500 hover:bg-opacity-50
-          md:hover:text-white hover:text-violet-600 md:hover:ring-0 md:hover:bg-transparent">Home</a>
+          <a href="./index.html" class="block py-2 pr-4 pl-3 text-violet-900 rounded-lg font-extrabold md:font-extrabold md:hover:bg-transparent md:border-0 md:p-0  md:text-violet-900 hover:ring-2 hover:ring-red-500 md:hover:text-violet-600 hover:text-violet-600 md:hover:ring-0 md:hover:bg-transparent">Home</a>
         </li>
         <li>
           <a href="./favorites.html"
-            class="block py-2 pr-4 pl-3 text-violet-600 rounded-lg md:bg-transparent font-extrabold md:font-extrabold md:text-violet-900 md:hover:text-violet-600 md:hover:ring-0 md:border-0 md:hover:bg-transparent hover:ring-2 hover:ring-red-500 md:p-0">Favorites</a>
+            class="currentPage block py-2 pr-4 pl-3 text-violet-600 rounded-lg md:bg-transparent font-extrabold md:font-extrabold md:text-violet-600 md:hover:text-violet-600 md:hover:ring-0
+            md:border-0 md:hover:bg-transparent hover:ring-2 hover:ring-red-500  md:p-0">Favorites</a>
         </li>
         <li>
-          <a href="./about.html" class="block py-2 pr-4 pl-3 text-violet-900 rounded-lg font-extrabold md:font-extrabold md:hover:bg-transparent md:border-0 md:p-0 md:text-gray-600 
+          <a href="./about.html" class="block py-2 pr-4 pl-3 text-violet-900 rounded-lg font-extrabold md:font-extrabold md:hover:bg-transparent md:border-0 md:p-0 md:text-violet-900  md:hover:text-violet-600
           hover:ring-2 hover:ring-red-500 hover:bg-opacity-50
-          md:hover:text-white hover:text-violet-600 md:hover:ring-0 md:hover:bg-transparent">About Us</a>
+          hover:text-violet-600 md:hover:ring-0 md:hover:bg-transparent">About Us</a>
         </li>
       </ul>
     </div>
@@ -62,7 +62,7 @@
 
   <div class="flex flex-col">
     <div class="overflow-x-auto">
-      <div class="py-2 mx-auto w-3/4">
+      <div class="py-2 lg:mx-auto lg:w-3/4 w-full">
         <div class="shadow-md sm:rounded-lg">
           <table class="min-w-full table-auto">
             <thead class="bg-gray-50 opacity-75">
@@ -91,7 +91,7 @@
   </div>
 
   <div>
-    <img src="/Assets/pictures/8-Bit-Cactus-Invert.png"
+    <img src="./Assets/pictures/8-Bit-Cactus-Invert.png"
       class="fixed opacity-5 w-1/12 bottom-0 right-7 z-10 hover:animate-pulse" />
   </div>
 
