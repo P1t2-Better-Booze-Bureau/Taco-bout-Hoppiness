@@ -19,14 +19,14 @@
 
 </head>
 
-<body class="bg-fixed bg-cover bg-[url('/Assets/pictures/Desert-Background.png')] overflow-x-hidden">
+<body class="bg-fixed bg-cover bg-[url('./Assets/pictures/Desert-Background.png')] overflow-x-hidden">
   <nav class="flex items-center justify-around flex-wrap bg-white-500 p-6">
 
     <div class="flex items-center flex-shrink-1 text-white mr-6">
       <img src="./Assets/pictures/Logo.png" class="w-full">
     </div>
 
-    <button data-collapse-toggle="mobile-menu" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
+    <button data-collapse-toggle="mobile-menu" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-violet-900 rounded-lg md:hidden hover:ring-2 ring-red-500 focus:outline-none" aria-controls="mobile-menu-2" aria-expanded="false">
       <span class="sr-only">Open main menu</span>
       <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
       <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
@@ -35,13 +35,16 @@
     <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
       <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium font-['Bungee_Inline']">
         <li>
-          <a href="index.html" class="block py-2 pr-4 pl-3 text-white bg-red-300 rounded-lg md:bg-transparent font-bold md:text-violet-900 md:hover:text-violet-600 md:hover:bg-transparent hover:bg-red-500 md:p-0 dark:text-white" aria-current="page">Home</a>
+          <a href="./index.html" class="block py-2 pr-4 pl-3 text-violet-600 rounded-lg md:bg-transparent font-extrabold md:font-extrabold md:text-violet-900 md:hover:text-violet-600 md:hover:ring-0
+          md:border-0 md:hover:bg-transparent hover:ring-2 hover:ring-red-500  md:p-0">Home</a>
         </li>
         <li>
-          <a href="/favorites.html" class="block py-2 pr-4 pl-3 text-violet-900 rounded-lg border-b border-gray-100 hover:bg-red-500 md:hover:bg-transparent md:border-0 md:hover:bg-red-500 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-red-500 dark:hover:text-violet-600 md:dark:hover:bg-transparent dark:border-gray-700">Favorites</a>
+          <a href="./favorites.html" class="block py-2 pr-4 pl-3 text-violet-900 rounded-lg font-extrabold md:font-extrabold md:hover:bg-transparent md:border-0 md:p-0  md:text-gray-600 hover:ring-2 hover:ring-red-500 md:hover:text-white hover:text-violet-600 md:hover:ring-0 md:hover:bg-transparent ">Favorites</a>
         </li>
         <li>
-          <a href="/Assets/About Us/about.html" class="block py-2 pr-4 pl-3 text-violet-900 rounded-lg border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-red-500 dark:hover:text-violet-600 md:dark:hover:bg-transparent dark:border-gray-700">About Us</a>
+          <a href="./about.html" class="block py-2 pr-4 pl-3 text-violet-900 rounded-lg font-extrabold md:font-extrabold md:hover:bg-transparent md:border-0 md:p-0 md:text-gray-600 
+          hover:ring-2 hover:ring-red-500 hover:bg-opacity-50
+          md:hover:text-white hover:text-violet-600 md:hover:ring-0 md:hover:bg-transparent">About Us</a>
         </li>
       </ul>
     </div>
@@ -50,11 +53,11 @@
       <input autocomplete="false" name="hidden" type="text" style="display:none;" name="zipCode" name="zipCodefake">
       <div class="flex items-center py-10">
         <input
-          class="appearance-none bg-gray-100 border-none w-full text-g5-Digit Zip Code1 px-2 leading-tight focus:outline-none"
+          class="appearance-none shadow-lg bg-gray-100 border-none w-full text-g5-Digit Zip Code1 px-2 leading-tight focus:outline-none"
           type="text" autocomplete="off" name="zipCode" onkeydown="javascript: return event.keyCode === 8 ||
           event.keyCode === 46 ? true : !isNaN(Number(event.key))" placeholder="5-Digit Zip Code" aria-label="Zip Code" name="quantity" minlength="5" maxlength="5" id="zipCode">
         <button
-          class="flex flex-shrink-0 font-bold bg-red-300 hover:bg-red-500 border-red-500 hover:border-red-300 hover:scale-105 text-sm border-4 text-violet-900 py-1 px-2 rounded font-['Bungee_Inline']"
+          class="flex flex-shrink-0 font-bold bg-red-300 hover:bg-red-500 shadow-lg border-red-500 hover:border-red-300 hover:scale-105 text-sm border-4 text-violet-900 py-1 px-2 rounded font-['Bungee_Inline']"
           type="button" id="submitButton">
           🔎 Find Hoppiness
       </div>
@@ -64,13 +67,13 @@
 
   <br>
 
-  <figure id="areYouReady" class="w-screen font-bold italic text-2xl mb-2 text-center text-violet-900 hover:text-violet-500 hover:scale-105 w-100 font-['Bungee_Inline']">  
+  <figure id="areYouReady" class="w-screen font-bold italic text-2xl mb-2 text-center text-violet-900 hover:text-violet-600 hover:scale-105 w-100 font-['Bungee_Inline']">  
     <img id="tumbleweed" src="./Assets/pictures/Tumbleweed01.gif" class="fixed -z-10 w-screen translate-y-60">    
     Are you ready to discover hoppiness?
   </figure>
   
   <!-- Page Break -->
-  <figure class="border-b-2 border-purple-500 pt-12 shadow-lg"></figure>
+  <figure class="border-b-2 border-violet-600 pt-12 shadow-lg"></figure>
 
   <br>
 
@@ -78,9 +81,9 @@
     <!-- Brewery Cards -->
     <article>
       <header>
-        <section class="px-10 content-center text-center text-xl hover:scale-105 font-bold font-['Bungee_Inline']" id="brewBanner">ENTER YOUR ZIPCODE TO
+        <section class="px-10 mt-20 hover:animate-bounce content-center text-center text-xl hover:scale-105 font-bold font-['Bungee_Inline']" id="brewBanner">Nothing but tumbleweeds... <br>What are you waiting for?<br>Enter your zip code!
           </section>
-        <section class="px-10 content-center text-center text-xl hover:scale-105 font-bold font-['Bungee_Inline']" id="brewBanner">PICK YOUR BREWERY
+        <section class="px-10 hidden content-center text-center text-xl hover:scale-105 font-bold font-['Bungee_Inline']" id="pickYourBrewBanner">PICK YOUR BREWERY
         <img src="./Assets/pictures/8-Bit-Beer.png" class="inline-block mb-6 p-1 w-14 ">
         </section>
       </header>
@@ -88,13 +91,12 @@
       <section class="container mx-auto justify-center">
         <div class="p-10 grid w-100 relative">
 
-          <button class="absolute left-0 h-64 top-10 text-5xl font-extrabold p-1 scroll-smooth hidden opacity-50 hover:opacity-100" id="brewButtonLeft"><</button>
+          <button class="absolute left-0 h-64 top-10 text-5xl font-extrabold p-1 scroll-smooth hidden opacity-50 hover:opacity-100 font-['Bungee_Inline']" id="brewButtonLeft"><</button>
 
-          <!-- <img class="w-full" src="./Assets/pictures/tacobouthoppiness2.jpg" alt="Hoppiness"> -->
           <output id="breweryTable" class="rounded relative overflow-x-hidden overflow-y-clip shadow-lg flex gap-5 min-w flex-col sm:justify-none sm:flex-row no-scrollbar scroll-smooth">
           </output>
 
-          <button class="absolute right-0 h-64 top-10 text-5xl font-extrabold p-1 scroll-smooth hidden opacity-50 hover:opacity-100" id="brewButtonRight">></button>
+          <button class="absolute right-0 h-64 top-10 text-5xl font-extrabold p-1 scroll-smooth hidden opacity-50 hover:opacity-100 font-['Bungee_Inline']" id="brewButtonRight">></button>
 
         </div>
       </section>
@@ -108,12 +110,11 @@
       </header>
       <section class="container mx-auto justify-center">
         <div class="p-10 grid w-100 relative">
-          <button class="absolute left-0 h-72 top-12 text-5xl font-extrabold p-1 scroll-smooth hidden opacity-50 hover:opacity-100" id="tacoButtonLeft"><</button>
-          <!-- <img class="w-full" src="./Assets/pictures/tacobouthoppiness2.jpg" alt="Hoppiness"> -->
+          <button class="absolute left-0 h-60 top-10 text-5xl font-extrabold p-1 scroll-smooth hidden opacity-50 z-10 hover:opacity-100 font-['Bungee_Inline']" id="tacoButtonLeft"><</button>
 
           <output id="tacoTable" class="rounded overflow-x-hidden overflow-y-clip shadow-lg flex gap-5 min-w flex-col sm:justify-none sm:flex-row no-scrollbar scroll-smooth"></output>
 
-          <button class="absolute right-0 h-64 top-10 text-5xl font-extrabold p-1 scroll-smooth hidden opacity-50 hover:opacity-100" id="tacoButtonRight">></button>
+          <button class="absolute right-0 h-60 top-10 text-5xl font-extrabold p-1 scroll-smooth hidden opacity-50 z-10 hover:opacity-100 font-['Bungee_Inline']" id="tacoButtonRight">></button>
         </div>        
       </section>
     </article>
@@ -123,9 +124,7 @@
     <img src="./Assets/pictures/8-Bit-Cactus-Invert.png" class="fixed w-1/12 bottom-0 right-7 hover:animate-bounce">
   </div>
 
-  <!-- Modal location -->
-  <!-- Modal tutorial: https://www.youtube.com/watch?v=VURZvau80Jo -->
-  <!-- Add hidden/flex toggle function in javascript -->
+  <!-- Modal location (from Flowbite) -->
   <div aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed right-0 left-0 top-4 z-50 justify-center items-center h-modal md:h-full md:inset-0" id="menuModal">
     <div class="relative px-4 w-full max-w-2xl h-full md:h-auto">
       <div class="relative bg-white rounded-lg shadow">
@@ -134,7 +133,7 @@
         </div>
         <div class="p-6 space-y-6 text-sm">
           <!-- Make filling this modal a list of taco menu items -->
-          <ul class="text-base leading-relaxed text-gray-500 list-outside list-disc" id="tacoMenuList"></ul>
+          <ul class="ml-5 text-base leading-relaxed text-gray-500 list-outside list-disc" id="tacoMenuList"></ul>
         </div>
         <div class="flex items-center p-6 space-x-2 rounded-b justify-between border-t border-gray-200">
           <button class="px-3 py-2 rounded font-bold bg-red-300 hover:bg-red-500 border-red-500 hover:border-red-300 hover:opacity-50 hover:text-red-800 font-['Bungee_Inline']" data-modal-toggle="menuModal" id="cancelBtn">Cancel</button>
@@ -145,7 +144,7 @@
   </div>
 
   <script>
-
+    // Zip Code Validation
     var fname = document.getElementById("zipCode");
     fname.addEventListener("input", () => {
       if (fname.validity.tooLong || fname.validity.tooShort || fname.validity.valueMissing) {

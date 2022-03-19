@@ -10,60 +10,95 @@
 
   <title>Taco 'bout Hoppiness</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Rye&family=Train+One&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="./Assets/CSS/style.css">  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Rye&family=Train+One&display=swap" />
+  <link rel="stylesheet" href="./Assets/CSS/style.css" />
   <link rel="stylesheet" href="https://unpkg.com/flowbite@1.3.4/dist/flowbite.min.css" />
-
 </head>
 
 <body class="bg-fixed bg-cover bg-[url('/Assets/pictures/Desert-Background.png')] overflow-x-hidden">
-    <nav class="flex items-center justify-around flex-wrap bg-white-500 p-6">
-
-      <div class="flex items-center flex-shrink-1 text-white mr-6">
-        <img src="/Assets/pictures/Logo.png" class="w-full">
-      </div>
-  
-      <button data-collapse-toggle="mobile-menu" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
-        <span class="sr-only">Open main menu</span>
-        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-        <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-      </button>
-  
-      <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
-        <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium font-['Bungee_Inline']">
-          <li>
-            <a href="/index.html" class="block py-2 pr-4 pl-3 text-white bg-red-300 rounded md:bg-transparent font-bold md:text-violet-900 md:hover:text-violet-600 md:hover:bg-transparent hover:bg-red-500 md:p-0 dark:text-white" aria-current="page">Home</a>
-          </li>
-          <li>
-            <a href="/favorites.html" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-red-500 md:hover:bg-transparent md:border-0 md:hover:bg-red-500 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-red-500 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Favorites</a>
-          </li>
-          <li>
-            <a href="/Assets/About Us/about.html" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-red-500 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About Us</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <main>
-      <table class="table-fixed border-separate border border-slate-400 flex justify-center mx-auto">
-        <thead>
-          <tr>
-            <th class = "text-center w-10 b-4">Brewery</th>
-            <th class = "mx-auto text-center">Tacqueria</th>
-          </tr>
-        </thead>
-      </table>
-    </main>
-
-    <div>
-      <img src="/Assets/pictures/8-Bit-Cactus-Invert.png" class="fixed opacity-5 w-1/12 bottom-0 right-7 z-10 hover:animate-pulse">
+  <nav class="flex lg:flex-row flex-col items-center justify-around flex-wrap bg-white-500 p-6">
+    <div class="flex items-center flex-shrink-1 text-white mr-6">
+      <img src="/Assets/pictures/Logo.png" class="w-full" />
     </div>
 
-    <script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></script>
-    <script src="./Assets/JS/script.js"></script>
-    <script src="./Assets/JS/breweries-script.js"></script>
+    <button data-collapse-toggle="mobile-menu" type="button"
+      class="inline-flex items-center p-2 ml-3 text-sm text-violet-900 rounded-lg md:hidden hover:ring-2 ring-red-500 focus:outline-none"
+      aria-controls="mobile-menu-2" aria-expanded="false">
+      <span class="sr-only">Open main menu</span>
+      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd"
+          d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+          clip-rule="evenodd"></path>
+      </svg>
+      <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd"
+          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+
+    <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
+      <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium font-['Bungee_Inline']">
+        <li>
+          <a href="./index.html" class="block py-2 pr-4 pl-3 text-violet-900 rounded-lg font-extrabold md:font-extrabold md:hover:bg-transparent md:border-0 md:p-0 md:text-gray-600 
+          hover:ring-2 hover:ring-red-500 hover:bg-opacity-50
+          md:hover:text-white hover:text-violet-600 md:hover:ring-0 md:hover:bg-transparent">Home</a>
+        </li>
+        <li>
+          <a href="./favorites.html"
+            class="block py-2 pr-4 pl-3 text-violet-600 rounded-lg md:bg-transparent font-extrabold md:font-extrabold md:text-violet-900 md:hover:text-violet-600 md:hover:ring-0 md:border-0 md:hover:bg-transparent hover:ring-2 hover:ring-red-500 md:p-0">Favorites</a>
+        </li>
+        <li>
+          <a href="./about.html" class="block py-2 pr-4 pl-3 text-violet-900 rounded-lg font-extrabold md:font-extrabold md:hover:bg-transparent md:border-0 md:p-0 md:text-gray-600 
+          hover:ring-2 hover:ring-red-500 hover:bg-opacity-50
+          md:hover:text-white hover:text-violet-600 md:hover:ring-0 md:hover:bg-transparent">About Us</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="flex flex-col">
+    <div class="overflow-x-auto">
+      <div class="py-2 mx-auto w-3/4">
+        <div class="shadow-md sm:rounded-lg">
+          <table class="min-w-full table-auto">
+            <thead class="bg-gray-50 opacity-75">
+              <tr>
+                <th scope="col"
+                  class="py-3 px-6 text-xs font-medium tracking-wider text-center text-gray-700 uppercase w-5/12">
+                  Brewery
+                </th>
+
+                <th scope="col"
+                  class="py-3 px-6 text-xs font-medium tracking-wider text-center text-gray-700 uppercase w-5/12">
+                  Tacqueria
+                </th>
+                </th>
+                <th scope="col" class="relative py-3 px-6 w-1/12">
+                  <span class="sr-only">Edit</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody id="favoritesTable">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <img src="/Assets/pictures/8-Bit-Cactus-Invert.png"
+      class="fixed opacity-5 w-1/12 bottom-0 right-7 z-10 hover:animate-pulse" />
+  </div>
+
+  <script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></script>
+  <!-- <script src="./Assets/JS/script.js"></script>
+    <script src="./Assets/JS/breweries-script.js"></script> -->
+  <script src="./Assets/JS/favorites.js"></script>
 </body>
 
+</html>
