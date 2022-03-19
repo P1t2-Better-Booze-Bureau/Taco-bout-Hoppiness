@@ -9,6 +9,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <title>Taco 'bout Hoppiness</title>
+  <link rel="icon" type="image/x-icon" href="./Assets/pictures/favicon.ico">
+
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,16 +37,16 @@
     <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
       <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium font-['Bungee_Inline']">
         <li>
-          <a href="./index.html" class="block py-2 pr-4 pl-3 text-violet-600 rounded-lg md:bg-transparent font-extrabold md:font-extrabold md:text-violet-900 md:hover:text-violet-600 md:hover:ring-0
+          <a href="./index.html" class="currentPage block py-2 pr-4 pl-3 text-violet-600 rounded-lg md:bg-transparent font-extrabold md:font-extrabold md:text-violet-600 md:hover:text-violet-600 md:hover:ring-0
           md:border-0 md:hover:bg-transparent hover:ring-2 hover:ring-red-500  md:p-0">Home</a>
         </li>
         <li>
-          <a href="./favorites.html" class="block py-2 pr-4 pl-3 text-violet-900 rounded-lg font-extrabold md:font-extrabold md:hover:bg-transparent md:border-0 md:p-0  md:text-gray-600 hover:ring-2 hover:ring-red-500 md:hover:text-white hover:text-violet-600 md:hover:ring-0 md:hover:bg-transparent ">Favorites</a>
+          <a href="./favorites.html" class="block py-2 pr-4 pl-3 text-violet-900 rounded-lg font-extrabold md:font-extrabold md:hover:bg-transparent md:border-0 md:p-0  md:text-violet-900 hover:ring-2 hover:ring-red-500 md:hover:text-violet-600 hover:text-violet-600 md:hover:ring-0 md:hover:bg-transparent ">Favorites</a>
         </li>
         <li>
-          <a href="./about.html" class="block py-2 pr-4 pl-3 text-violet-900 rounded-lg font-extrabold md:font-extrabold md:hover:bg-transparent md:border-0 md:p-0 md:text-gray-600 
+          <a href="./about.html" class="block py-2 pr-4 pl-3 text-violet-900 rounded-lg font-extrabold md:font-extrabold md:hover:bg-transparent md:border-0 md:p-0 md:text-violet-900  md:hover:text-violet-600
           hover:ring-2 hover:ring-red-500 hover:bg-opacity-50
-          md:hover:text-white hover:text-violet-600 md:hover:ring-0 md:hover:bg-transparent">About Us</a>
+          hover:text-violet-600 md:hover:ring-0 md:hover:bg-transparent">About Us</a>
         </li>
       </ul>
     </div>
@@ -81,7 +83,7 @@
     <!-- Brewery Cards -->
     <article>
       <header>
-        <section class="px-10 mt-20 hover:animate-bounce content-center text-center text-xl hover:scale-105 font-bold font-['Bungee_Inline']" id="brewBanner">Nothing but tumbleweeds... <br>What are you waiting for?<br>Enter your zip code!
+        <section class="px-10 mt-20 hover:animate-bounce content-center text-center text-xl hover:scale-105  text-violet-900 hover:text-violet-600 font-bold font-['Bungee_Inline']" id="brewBanner">Nothing but tumbleweeds... <br>What are you waiting for?<br>Enter your zip code!
           </section>
         <section class="px-10 hidden content-center text-center text-xl hover:scale-105 font-bold font-['Bungee_Inline']" id="pickYourBrewBanner">PICK YOUR BREWERY
         <img src="./Assets/pictures/8-Bit-Beer.png" class="inline-block mb-6 p-1 w-14 ">
@@ -112,7 +114,7 @@
         <div class="p-10 grid w-100 relative">
           <button class="absolute left-0 h-60 top-10 text-5xl font-extrabold p-1 scroll-smooth hidden opacity-50 z-10 hover:opacity-100 font-['Bungee_Inline']" id="tacoButtonLeft"><</button>
 
-          <output id="tacoTable" class="rounded overflow-x-hidden overflow-y-clip shadow-lg flex gap-5 min-w flex-col sm:justify-none sm:flex-row no-scrollbar scroll-smooth"></output>
+          <output id="tacoTable" class="rounded overflow-x-hidden overflow-y-clip flex gap-5 min-w flex-col sm:justify-none sm:flex-row no-scrollbar scroll-smooth"></output>
 
           <button class="absolute right-0 h-60 top-10 text-5xl font-extrabold p-1 scroll-smooth hidden opacity-50 z-10 hover:opacity-100 font-['Bungee_Inline']" id="tacoButtonRight">></button>
         </div>        

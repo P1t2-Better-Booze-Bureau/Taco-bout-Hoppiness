@@ -13,7 +13,9 @@
     />
     <link rel="stylesheet" href="./Assets/CSS/About.css" />
     <title>About Us</title>
+    <link rel="icon" type="image/x-icon" href="./Assets/pictures/favicon.ico">
   </head>
+  
   <body
     class="bg-fixed bg-cover bg-[url('./Assets/pictures/Desert-Background.png')] overflow-x-hidden"
   >
@@ -61,33 +63,32 @@
           class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium font-['Bungee_Inline']"
         >
         <li>
-          <a href="./index.html" class="block py-2 pr-4 pl-3 text-violet-900 rounded-lg font-extrabold md:font-extrabold md:hover:bg-transparent md:border-0 md:p-0 md:text-gray-600 
-          hover:ring-2 hover:ring-red-500 hover:bg-opacity-50
-          md:hover:text-white hover:text-violet-600 md:hover:ring-0 md:hover:bg-transparent">Home</a>
+          <a href="./index.html" class="block py-2 pr-4 pl-3 text-violet-900 rounded-lg font-extrabold md:font-extrabold md:hover:bg-transparent md:border-0 md:p-0  md:text-violet-900 hover:ring-2 hover:ring-red-500 md:hover:text-violet-600 hover:text-violet-600 md:hover:ring-0 md:hover:bg-transparent">Home</a>
         </li>
         <li>
-          <a href="./favorites.html" class="block py-2 pr-4 pl-3 text-violet-900 rounded-lg font-extrabold md:font-extrabold md:hover:bg-transparent md:border-0 md:p-0 md:text-gray-600 
+          <a href="./favorites.html" class="block py-2 pr-4 pl-3 text-violet-900 rounded-lg font-extrabold md:font-extrabold md:hover:bg-transparent md:border-0 md:p-0 md:text-violet-900  md:hover:text-violet-600
           hover:ring-2 hover:ring-red-500 hover:bg-opacity-50
-          md:hover:text-white hover:text-violet-600 md:hover:ring-0 md:hover:bg-transparent">Favorites</a>
+          hover:text-violet-600 md:hover:ring-0 md:hover:bg-transparent">Favorites</a>
         </li>
         <li>
-          <a href="./about.html" class="block py-2 pr-4 pl-3 text-violet-600 rounded-lg md:bg-transparent font-extrabold md:font-extrabold md:text-violet-900 md:hover:text-violet-600 md:hover:ring-0 md:border-0 md:hover:bg-transparent hover:ring-2 hover:ring-red-500 md:p-0">About Us</a>
+          <a href="./about.html" class="currentPage block py-2 pr-4 pl-3 text-violet-600 rounded-lg md:bg-transparent font-extrabold md:font-extrabold md:text-violet-600 md:hover:text-violet-600 md:hover:ring-0
+          md:border-0 md:hover:bg-transparent hover:ring-2 hover:ring-red-500  md:p-0">About Us</a>
         </li>
       </div>
     </nav>
     <header class="text-center text-slate-50 py-3 font-bold">
-      <h1 class= "block py-2 block py-2 pr-4 pl-3 text-violet-900 border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 font-bold text-4xl text-black shadow-slate-50 font-['Bungee_Inline']"
+      <h1 class= "aboutHeaderBlack block py-2 block py-2 pr-4 pl-3 text-violet-900 border-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 font-bold text-4xl text-black hover:bg-0 font-['Bungee_Inline']"
       >
         About Us
       </h1>
       <br />
-      <h1 class="text-3xl text-purple-900 font-['Bungee_Inline']">
+      <h1 class="aboutHeader text-3xl text-purple-900 font-['Bungee_Inline']">
         🍺We are the Better Booze Bureau!!!🍺
       </h1>
     </header>
 
     <h2
-      class="drbg-transparent text-4xl font-bold py-3 text-center font-['Bungee_Inline'] italic text-black shadow-slate-50"
+      class="aboutHeaderBlack drbg-transparent text-4xl font-bold py-3 text-center font-['Bungee_Inline'] italic text-black shadow-slate-50"
     >
       Meet Our Team
     </h2>
@@ -97,7 +98,7 @@
     >
       <!-- ME -->
             <div
-            class="mb-5 relative mx-10 flex flex-col max-w-sm h-300 rounded-lg border border-violet-800 shadow-md items-center heroPattern"
+            class="mb-5 relative mx-10 flex flex-col max-w-sm h-300 rounded-lg border border-violet-800 shadow-md items-center mePattern card-shadow"
           >
             <img
               class="rounded-t-lg"
@@ -107,15 +108,15 @@
       
             <div class="p-5">
               <h5
-                class="mb-2 text-2xl font-bold tracking-tight text-black text-center"
+                class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-center font-['Bungee_Inline']"
               >
                 Miguel Escobar
               </h5>
             </div>
       
-            <div>
+            <div class="px-2">
               <p
-                class="flex-1 pb-6 mb-6 justify-center font-normal text-black font-semibold text-center"
+                class="flex-1 pb-6 mb-6 justify-center font-normal text-gray-700 font-semibold text-center font-mono"
               >
               Medical Device Engineer with nine years experience in R&D. <br><br> Training to be a web developer. I helped created this site to practice my skills. <br><br>
               In my spare time, I enjoy drinking German beer and playing board games.
@@ -124,14 +125,14 @@
             <div class="absolute bottom-0 mb-max py-2">
               <a
                 href="mailto:mae2136@gmail.com"
-                class="content-end w-max py-2 px-3 text-sm font-medium text-center text-white bg-violet-900 rounded-lg hover:bg-violet-600 focus:ring-yellow-300 adjust-center"
+                class="content-end w-max py-2 px-3 text-sm font-medium text-center text-white bg-violet-900 rounded-lg hover:bg-violet-600 focus:ring-yellow-300 adjust-center font-bold font-mono e-shadow"
                 >E-mail Me</a
               >
             </div>
           </div>
       <!-- JC -->
       <div
-      class="mb-5 relative mx-10 flex flex-col max-w-sm h-300 rounded-lg border border-violet-800 shadow-md items-center heroPattern"
+      class="mb-5 relative mx-10 flex flex-col max-w-sm h-300 rounded-lg border border-violet-800 shadow-md items-center heroPattern card-shadow"
     >
       <img
         class="rounded-t-lg"
@@ -140,30 +141,30 @@
       />
       <div class="p-5 ">
         <h5
-          class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-center"
+          class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-center font-['Bungee_Inline']"
         >
           Jesse Comeau
         </h5>
       </div>
 
-      <div>
+      <div class="px-2">
         <p
-          class="flex-1 pb-6 mb-6 justify-center font-normal text-gray-700 text-center "
+          class="flex-1 pb-6 mb-6 justify-center text-gray-700 font-semibold text-center font-mono"
         >
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        Beer and Taco enthusiast, with a background in finance and economics. <br><br> Currently a fraud analytics manager, training to be a full stack web developer. <BR><BR> In my down time, I enjoy spending time with my dog or working on home projects.
         </p>
       </div>
       <div class="absolute bottom-0 mb-max py-2">
         <a
           href="mailto:JesseC262@gmail.com"
-          class="content-end w-max py-2 px-3 text-sm font-medium text-center text-white bg-violet-900 rounded-lg hover:bg-violet-600 focus:ring-yellow-300 adjust-center"
+          class="content-end w-max py-2 px-3 text-sm font-medium text-center text-white bg-violet-900 rounded-lg hover:bg-violet-600 focus:ring-yellow-300 adjust-center e-shadow font-bold font-mono e-shadow"
           >E-mail Me</a
         >
       </div>
     </div>
       <!-- GJC -->
       <div
-      class="mb-5 relative mx-10 flex flex-col max-w-sm h-300 rounded-lg border border-violet-800 shadow-md items-center gjcHeroPattern"
+      class="mb-5 relative mx-10 flex flex-col max-w-sm h-300 rounded-lg border border-violet-800 shadow-md items-center gjcHeroPattern card-shadow"
     >
       <img
         class="rounded-t-lg"
@@ -173,30 +174,34 @@
 
       <div class="p-5">
         <h5
-          class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-center"
+          class="mb-2 text-2xl font-extrabold tracking-tight text-gray-900 text-center font-['Bungee_Inline']"
         >
          Glenn John Cervantes
         </h5>
       </div>
 
-      <div>
+      <div class="px-2">
         <p
-          class="flex-1 pb-6 mb-6 justify-center font-normal text-gray-700 text-center"
+          class="flex-1 pb-6 mb-6 justify-center font-bold text-gray-700 text-center font-mono"
         >
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        </p>
+        Foodie in search of the perfect taco and the strongest brew.
+        <br><br>
+        Operations coordinator & event planner in the non-profit realm, hoping to branch out into web-dev.
+        <br><br>
+        Chasing hoppiness one taco at a time.
+      </p>
       </div>
       <div class="absolute bottom-0 mb-max py-2">
         <a
           href="mailto:glennjohncervantes@gmail.com"
-          class="content-end w-max py-2 px-3 text-sm font-medium text-center text-white bg-violet-900 rounded-lg hover:bg-violet-600 focus:ring-yellow-300 adjust-center"
+          class="content-end w-max py-2 px-3 text-sm font-medium text-center text-white bg-violet-900 rounded-lg hover:bg-violet-600 focus:ring-yellow-300 adjust-center font-bold font-mono e-shadow"
           >E-mail Me</a
         >
       </div>
     </div>
       <!-- YK -->
       <div
-        class="mb-5 ykBgPattern relative mx-10 flex flex-col max-w-sm h-300 rounded-lg border border-violet-800 shadow-md items-center"
+        class="mb-5 ykBgPattern relative mx-10 flex flex-col max-w-sm h-300 rounded-lg border border-violet-800 shadow-md items-center card-shadow"
       >
         <img
           class="rounded-t-lg"
@@ -206,15 +211,15 @@
 
         <div class="p-5">
           <h5
-            class="mb-2 text-2xl font-bold tracking-tight text-black text-center "
+            class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-center font-['Bungee_Inline']"
           >
             Youssef Kirollos
           </h5>
         </div>
 
-        <div>
+        <div class="px-2">
           <p
-            class="flex-1 px-3 pb-6 mb-6 justify-center font-semibold text-black text-center"
+            class="flex-1 px-3 pb-6 mb-6 justify-center font-semibold text-gray-700 text-center font-mono"
           >
             In search of a more flexible, laidback 
             field which would allow me to spend more time with my new
@@ -224,7 +229,7 @@
         <div class="absolute bottom-0 mb-max py-2">
           <a
             href="mailto:ykirollos89@gmail.com"
-            class="content-end w-max py-2 px-3 text-sm font-medium text-center text-white bg-violet-900 rounded-lg hover:bg-violet-600 focus:ring-yellow-300 adjust-center"
+            class="content-end w-max py-2 px-3 text-sm font-medium text-center text-white bg-violet-900 rounded-lg hover:bg-violet-600 focus:ring-yellow-300 adjust-center e-shadow font-bold font-mono e-shadow"
             >E-mail Me</a
           >
         </div>
@@ -233,7 +238,7 @@
     <div>
       <img
         src="./Assets/pictures/8-Bit-Cactus-Invert.png"
-        class="fixed opacity-5 w-1/12 bottom-0 right-7 z-10 hover:animate-spin"
+        class="fixed opacity-5 w-1/12 bottom-0 right-7 z-10 hover:animate-pulse"
       />
     </div>
     <script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></script>

@@ -21,3 +21,19 @@
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+.card-shadow{
+    text-shadow: 1px 1px white;
+}
+
+#areYouReady {
+    text-shadow: 1px 1px #f3e8ff;
+}
+
+#brewBanner {
+    text-shadow: 1px 1px #f3e8ff;
+}
+
+.currentPage {
+    text-shadow: 1px 1px #f3e8ff;
+}
